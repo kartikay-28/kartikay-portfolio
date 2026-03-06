@@ -16,45 +16,53 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.8 }}
             className="order-2 lg:order-1"
           >
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="text-primary text-lg mb-4"
-            >
-              Hi, I&apos;m Kartikay Rattan 👋
-            </motion.p>
-
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-2"
+            >
+              Hi, I&apos;m{" "}
+              <motion.span
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                className="bg-gradient-to-r from-primary via-green-400 to-primary bg-clip-text text-transparent inline-block"
+              >
+                Kartikay.
+              </motion.span>
+            </motion.h1>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6"
             >
-              Full-Stack Developer
-            </motion.h1>
+              Full-Stack Web Developer
+            </motion.h2>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="text-lg text-foreground/70 mb-8"
+              transition={{ delay: 0.8, duration: 0.6 }}
+              className="text-lg text-foreground/70 mb-8 max-w-xl"
             >
-              I build scalable web applications using Next.js, React, Node.js and modern databases.
+              I build modern, secure, and scalable web applications with clean UI, smooth animations, and real-world performance in mind.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
+              transition={{ delay: 1, duration: 0.6 }}
               className="flex flex-wrap gap-3"
             >
               <motion.a
                 href="#projects"
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(34, 197, 94, 0.4)" }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-primary text-primary-foreground px-6 py-2.5 rounded-lg font-medium flex items-center gap-2 hover:bg-primary/90 transition-colors text-sm"
               >
@@ -90,10 +98,14 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.1, duration: 0.5 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
             className="order-1 lg:order-2 flex justify-center lg:justify-end"
           >
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-2xl overflow-hidden border-4 border-primary/20 shadow-2xl">
+            <motion.div
+              whileHover={{ scale: 1.05, rotate: 2 }}
+              transition={{ duration: 0.3 }}
+              className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden border-4 border-primary/20 shadow-2xl"
+            >
               <Image
                 src="/kartik-profile.jpg"
                 alt="Kartikay Rattan"
@@ -101,7 +113,19 @@ export default function Hero() {
                 className="object-cover scale-125"
                 priority
               />
-            </div>
+              {/* Glow effect */}
+              <motion.div
+                animate={{
+                  opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent pointer-events-none"
+              />
+            </motion.div>
           </motion.div>
         </div>
       </div>
